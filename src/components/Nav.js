@@ -83,6 +83,42 @@ export class Navigation extends Component {
                 </div>
               </span>
             </div>
+
+            
+            <div
+              className={`Nav--Group ${
+                this.state.activeSubNav === 'toggledHome' ? 'active' : ''
+              }`}
+            >
+              <span
+                className={`NavLink Nav--GroupParent ${
+                  this.props.location.pathname.includes('posts') ||
+                  this.props.location.pathname.includes('blog') ||
+                  this.props.location.pathname.includes('post-categories')
+                    ? 'active'
+                    : ''
+                }`}
+                onClick={() => this.toggleSubNav('toggledHome')}
+              >
+                Home Test
+                <div className="Nav--GroupLinks">
+                  
+                  <NavLink to="/blog/" className="Nav--GroupLink">
+                    History of Library
+                  </NavLink>         
+                  
+                  <NavLink to="/blog/" className="Nav--GroupLink">
+                    Board and Staff
+                  </NavLink>                  
+                  
+                  <NavLink to="/blog/" className="Nav--GroupLink">
+                    Mission &amp; Vision Statements
+                  </NavLink>
+                  
+                </div>
+              </span>
+            </div>
+            
             <NavLink to="/default/">Default</NavLink>
             <NavLink to="/contact/">Contact</NavLink>
           </div>
